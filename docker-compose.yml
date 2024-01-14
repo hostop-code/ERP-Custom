@@ -43,7 +43,8 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     networks:
       - mysql-phpmyadmin
-      - 
+      
+      
   nginx-proxy:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
