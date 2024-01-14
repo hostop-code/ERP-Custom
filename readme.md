@@ -1,17 +1,16 @@
-nullcave.club
+## Kelompok:
 
-## About Ultimate POS
+- Kevin Williams Permana    : 7201200035 (7SIM1)
+- Farazayu                  : 72012000-- (7SIM2)
 
-Ultimate POS is a POS application by [Ultimate Fosters](http://ultimatefosters.com), a brand of [The Web Fosters](http://thewebfosters.com).
+## Tentang Project
+
+Untuk Memenuhi tugas matakuliah ERP
 
 ## Installation & Documentation
 You will find installation guide and documentation in the downloaded zip file.
-Also, For complete updated documentation of the ultimate pos please visit online [documentation guide](http://ultimatefosters.com/ultimate-pos/).
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within ultimate POS, please send an e-mail to support at thewebfosters@gmail.com. All security vulnerabilities will be promptly addressed.
-
+<!-- 
 ## License
 
-The Ultimate POS software is licensed under the [Codecanyon license](https://codecanyon.net/licenses/standard).
+The Ultimate POS software is licensed under the [Codecanyon license](https://codecanyon.net/licenses/standard). -->
