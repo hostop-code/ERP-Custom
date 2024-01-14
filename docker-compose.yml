@@ -4,13 +4,15 @@ services:
   web-erp:
     build:
       context: .
-      dockerfile: Dockerfile-xampp 
-    image: xampp-web-erp
+      dockerfile: Dockerfile
+    image: kevinity310/xampp-erp-tugas-kuliah
     restart: always
     ports:
       - "8080:80"
-      - "8081:443"
-  
+      - "8443:443"
+    networks:
+      - mysql-phpmyadmin
+    
   # Database
   db-mysql:
     platform: linux/x86_64
@@ -25,8 +27,8 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: erp
       MYSQL_PASSWORD: root
-    # networks:
-    #   - mysql-phpmyadmin
+    networks:
+      - mysql-phpmyadmin
 
   # phpmyadmin
   phpmyadmin:
@@ -39,8 +41,8 @@ services:
     environment:
       PMA_HOST: db-mysql
       MYSQL_ROOT_PASSWORD: secret
-    # networks:
-    #   - mysql-phpmyadmin
+    networks:
+      - mysql-phpmyadmin
 
 networks:
   mysql-phpmyadmin:
