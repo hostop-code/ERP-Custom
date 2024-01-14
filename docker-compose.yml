@@ -16,10 +16,13 @@ services:
   # Database
   db-mysql:
     platform: linux/x86_64
-    image: mysql:5.7
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    image: kevinity310/mysql-for-erp:5.7
     volumes:
       - db_data:/var/lib/mysql
-      - ./mysql/init:/docker-entrypoint-initdb.d/:ro
+      # - ./mysql/init:/docker-entrypoint-initdb.d/:ro
     restart: always
     ports:
       - "3306:3306"
@@ -44,17 +47,17 @@ services:
     networks:
       - mysql-phpmyadmin
       
-      
-  nginx-proxy:
-    image: 'jc21/nginx-proxy-manager:latest'
-    restart: unless-stopped
-    ports:
-      - '80:80'
-      - '81:81'
-      - '443:443'
-    volumes:
-      - data_nginx:/data
-      - letsencrypt:/etc/letsencrypt
+
+  # nginx-proxy:
+  #   image: 'jc21/nginx-proxy-manager:latest'
+  #   restart: unless-stopped
+  #   ports:
+  #     - '80:80'
+  #     - '81:81'
+  #     - '443:443'
+  #   volumes:
+  #     - data_nginx:/data
+  #     - letsencrypt:/etc/letsencrypt
 
 networks:
   mysql-phpmyadmin:
