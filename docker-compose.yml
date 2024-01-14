@@ -43,9 +43,24 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     networks:
       - mysql-phpmyadmin
+      - 
+  nginx-proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - data_nginx:/data
+      - letsencrypt:/etc/letsencrypt
 
 networks:
   mysql-phpmyadmin:
 
 volumes:
   db_data:
+  data_nginx:
+  letsencrypt:
+    
+  
